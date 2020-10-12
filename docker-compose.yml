@@ -1,0 +1,15 @@
+version: '3'
+services:
+  worker:
+    build: .
+    command: bash -c "./server.rb run"
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/myapp
+    networks:
+      - airport
+networks:
+  airport:
+    external:
+      name: airport_network
