@@ -5,7 +5,7 @@ MAX_WAIT_TIME=30
 
 redis = Redis.new(host: 'redis', port: 6379, db: 0)
 while true do
-  msg = redis.blpop("takeoff.queue")
+  msg = redis.lpop("takeoff.queue")
   if msg
     message = JSON.parse(msg)
     puts "received: #{message}"
