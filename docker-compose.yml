@@ -6,7 +6,7 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - .:/myapp
+      - .:/app
     networks:
       - airport
 networks:
